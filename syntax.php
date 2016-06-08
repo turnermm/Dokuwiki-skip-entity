@@ -10,6 +10,9 @@
 		
         function getType(){ return 'formatting'; }			
 		function getAllowedTypes() { 
+            if($this->getConf('allow_formats')) {
+                return array('formatting');
+            }
 			return array();
 		}
 		function getSort(){ return 25; }
