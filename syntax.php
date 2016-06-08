@@ -23,7 +23,7 @@
 			
 		}
 		function __construct() {
-		    $this->helper =& plugin_load('helper', 'epub');
+		    
 		}
 		function handle($match, $state, $pos, &$handler) {		 
  			switch ($state) {		

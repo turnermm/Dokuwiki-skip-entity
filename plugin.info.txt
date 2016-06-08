@@ -1,4 +1,4 @@
-base news
+base skipentity
 author Myron Turner
 email turnermm02@shaw.ca
 date 2016-06-08
