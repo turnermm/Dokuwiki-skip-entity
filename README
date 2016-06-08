@@ -7,3 +7,11 @@ If you want bold, then the bold has to be placed outside the skip-entity markup:
 The initial purpose of this plugin is to by-pass the rendering of entities where required without having to delete
 entities from the configuration files.
 
+A new toolbar item should appear in the toolbar:
+      +-----+
+      |  SE |
+      | <-> |
+      +-----+
+
+Any questions should be raised here on github as an issue.
+      m@ 
