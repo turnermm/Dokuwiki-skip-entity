@@ -2,3 +2,6 @@ The syntax for this plugin is:  ``<text>``
 Whatever is included inside the markup will be rendered literally.  This means that no other
 formatting markup will work here.  For instance, ``**bold**`` will be rendered as **bold**.
 
+The initial purpose of this plugin is to by-pass the rendering of entities where required without having to delete
+entities from the configuration files.
+
