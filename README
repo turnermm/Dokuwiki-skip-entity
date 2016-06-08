@@ -1,7 +1,9 @@
-The syntax for this plugin is:  ``<text>``
+The syntax for this plugin is:  ``<text>``.  This is adapted from the markdown markup for code.
 Whatever is included inside the markup will be rendered literally.  This means that no other
-formatting markup will work here.  For instance, ``**bold**`` will be rendered as **bold**.
-
+formatting markup will work here.  For instance,  will be rendered as **bold**.
+If you want bold, then the bold has to be placed outside the skip-entity markup:
+    **``bold``**
+  
 The initial purpose of this plugin is to by-pass the rendering of entities where required without having to delete
 entities from the configuration files.
 
