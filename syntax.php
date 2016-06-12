@@ -17,21 +17,20 @@
 		}
 		function getSort(){ return 25; }
 		
-		function connectTo($mode) {
-			$this->Lexer->addEntryPattern('``(?=.*?``)',$mode,'plugin_skipentity');
-			
+		function connectTo($mode) {			
+        	$this->Lexer->addEntryPattern('```?(?=.*?```?)',$mode,'plugin_skipentity');			
 		}
+        
 		function postConnect() {
-			$this->Lexer->addExitPattern('``','plugin_skipentity');
-			
+            $this->Lexer->addExitPattern('```?','plugin_skipentity');
 		}
-		function __construct() {
-		    
-		}
+        
+		function __construct() {	}
+        
 		function handle($match, $state, $pos, &$handler) {		 
  			switch ($state) {		
 				case DOKU_LEXER_ENTER :     
-				   return array($state, '');          
+				   return array($state, trim($match));          
 				
 				case DOKU_LEXER_UNMATCHED :				  
 				return array($state, $match);
@@ -52,9 +51,15 @@
 				list($state, $match) = $data;
 				
 				switch ($state) {
-					case DOKU_LEXER_ENTER :				    
-					$renderer->doc .= '<code>';
-					break;
+					case DOKU_LEXER_ENTER :
+                    if($match == '``') { 
+                              $renderer->doc .= '<code>';                                
+                       }
+                      else { 
+                         // $renderer->doc .= '<code style = "background-color:white; border: none; box-shadow:none;">'; 
+                         $renderer->doc .= '<code class="skipentity">';                         
+                      }   
+                      break;
 					
 					case DOKU_LEXER_UNMATCHED :
                     $renderer->doc .= $renderer->_xmlEntities($match); 
