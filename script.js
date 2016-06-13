@@ -34,4 +34,3 @@ if (typeof window.toolbar !== 'undefined') {
     };
    }
 }
-//alert(JSINFO['multiple']);

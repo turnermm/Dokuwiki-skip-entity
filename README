@@ -3,9 +3,10 @@ Whatever is included inside the markup will be rendered literally.  This means t
 formatting markup will work here.  For instance,``**bold**``  will be rendered as **bold**.
 If you want bold, then the bold has to be placed outside the skip-entity markup:
     **``bold``**
+ Or else you can acrtivate the 'allow_formats' option.  
   
 The initial purpose of this plugin is to by-pass the rendering of entities where required without having to delete
-entities from the configuration files.
+entities from the configuration files.  But it has a wider usefulness.  Please see the  plugin page at Dokuwiki.org.
 
 A new toolbar item should appear in the toolbar:
       +-----+
@@ -14,4 +15,6 @@ A new toolbar item should appear in the toolbar:
       +-----+
 
 Any questions should be raised here on github as an issue.
-      m@ 
+ 
+
+ 
