@@ -22,8 +22,11 @@ class action_plugin_skipentity extends DokuWiki_Action_Plugin {
     }
 
     function handle_started(Doku_Event $event, $param) {
+              global $JSINFO;
+    
+              $multiple = $this->getConf('multiple') ? 1 : 0;      
+              $JSINFO['multiple'] = $multiple;
   
-              $multiple = $this->getConf('multiple');      
      }
 
 

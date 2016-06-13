@@ -1,4 +1,5 @@
 if (typeof window.toolbar !== 'undefined') {
+    if(JSINFO['multiple']) {
     toolbar[toolbar.length] = {
         type: "picker",
         title: "Skip Entity",
@@ -21,4 +22,16 @@ if (typeof window.toolbar !== 'undefined') {
          }
       ]
     };
+   } else {
+        toolbar[toolbar.length] = {
+        type: "format",
+        title: "Skip Entity",
+        icon: '../../plugins/skipentity/skent.png',
+        key: "",
+        open: "``",
+        sample: "Text",
+        close: "``"
+    };
+   }
 }
+//alert(JSINFO['multiple']);
