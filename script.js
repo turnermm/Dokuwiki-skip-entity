@@ -4,7 +4,7 @@ if (typeof window.toolbar !== 'undefined') {
         title: "Skip Entity",
         icon: '../../plugins/skipentity/skent.png',
         key: "",
-        list:[{"type":"format","title":"white","icon":"..\/..\/plugins\/skipentity\/tt-w.png","open":"```","close":"```"},
-        {"type":"format","title":"gray","icon":"..\/..\/plugins\/skipentity\/tt-g.png","open":"``","close":"``"}]
+        list:[{"type":"format","title":LANG.plugins.skipentity.w_title,"icon":"..\/..\/plugins\/skipentity\/tt-w.png","open":"```","close":"```"},
+        {"type":"format","title":LANG.plugins.skipentity.g_title,"icon":"..\/..\/plugins\/skipentity\/tt-g.png","open":"``","close":"``"}]
     };
 }
