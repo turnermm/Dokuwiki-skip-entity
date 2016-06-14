@@ -1,3 +1,3 @@
 <?php
 $conf['allow_formats']=0;
-$conf['multiple']=1;
+$conf['multiple']=0;
