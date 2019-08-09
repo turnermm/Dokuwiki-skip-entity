@@ -62,7 +62,10 @@
 					
 					case DOKU_LEXER_UNMATCHED :
                         $match = $renderer->_xmlEntities($match); 
-                        $match = str_replace("\n","<br />", $match);
+                        $match = str_replace("\n","<br>", $match);
+                        if(strpos($match,'  ') !== false) {
+                            $match = preg_replace("/\s/m","&nbsp;",$match);                         
+                        }                       
                         $renderer->doc .= $match;                 
 					break;
 					case DOKU_LEXER_EXIT :
