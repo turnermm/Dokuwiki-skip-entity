@@ -1,7 +1,7 @@
 base skipentity
 author Myron Turner
 email turnermm02@shaw.ca
-date 2019-08-09
+date 2019-08-11
 name skipentity
 desc creates monospaced text without converting entities
 url http://www.dokuwiki.org/plugin:skipentity
