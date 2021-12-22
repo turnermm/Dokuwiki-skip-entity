@@ -10,6 +10,8 @@
 		
         function getType(){ return 'formatting'; }			
 		function getAllowedTypes() { 
+            global $PARSER_MODES;
+            $PARSER_MODES['formatting'] = array('strong','underline','subscript', 'superscript', 'deleted', 'footnote');
             if($this->getConf('allow_formats')) {
                 return array('formatting');
             }
