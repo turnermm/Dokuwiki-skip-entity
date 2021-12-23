@@ -11,7 +11,10 @@
         function getType(){ return 'formatting'; }			
 		function getAllowedTypes() { 
             global $PARSER_MODES;
-            $PARSER_MODES['formatting'] = array('strong','underline','subscript', 'superscript', 'deleted', 'footnote');
+            foreach(array('monospace','emphasis') AS $del_val) {
+                $this->array_val_delete($PARSER_MODES['formatting'],$del_val);
+            }            
+          //  $PARSER_MODES['formatting'] = array('strong','underline','subscript', 'superscript', 'deleted', 'footnote');
             if($this->getConf('allow_formats')) {
                 return array('formatting');
             }
@@ -80,6 +83,12 @@
 		
 			return false;
 		}
+        
+    function array_val_delete(&$ar,$del_val){
+        if (($key = array_search($del_val, $ar)) !== false) {
+        unset($ar[$key]);
+    }
+   }     
  }        
 			
 
