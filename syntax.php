@@ -10,6 +10,11 @@
 		
         function getType(){ return 'formatting'; }			
 		function getAllowedTypes() { 
+            global $PARSER_MODES;
+            $excludes = explode(',',$this->getConf('xcl_formats'));             
+            foreach($excludes AS $del_val) {            
+               $this->array_val_delete($PARSER_MODES['formatting'],trim($del_val));
+            }            
             if($this->getConf('allow_formats')) {
                 return array('formatting');
             }
@@ -78,6 +83,12 @@
 		
 			return false;
 		}
+        
+    function array_val_delete(&$ar,$del_val){
+        if (($key = array_search($del_val, $ar)) !== false) {
+        unset($ar[$key]);
+    }
+   }     
  }        
 			
 
