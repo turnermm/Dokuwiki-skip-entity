@@ -11,10 +11,10 @@
         function getType(){ return 'formatting'; }			
 		function getAllowedTypes() { 
             global $PARSER_MODES;
-            foreach(array('monospace','emphasis') AS $del_val) {
-                $this->array_val_delete($PARSER_MODES['formatting'],$del_val);
+            $excludes = explode(',',$this->getConf('xcl_formats'));             
+            foreach($excludes AS $del_val) {            
+               $this->array_val_delete($PARSER_MODES['formatting'],trim($del_val));
             }            
-          //  $PARSER_MODES['formatting'] = array('strong','underline','subscript', 'superscript', 'deleted', 'footnote');
             if($this->getConf('allow_formats')) {
                 return array('formatting');
             }
